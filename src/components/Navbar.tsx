@@ -119,20 +119,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEstimateModal }) => {
           </nav>
 
           {/* Actions */}
-          <div className="hidden sm:flex items-center gap-3">
-            <a
-              href={`tel:${COMPANY_PHONE.replace(/[^0-9]/g, '')}`}
-              className="hidden md:flex flex-col items-end text-right pr-2 group"
-            >
-              <span className="text-[11px] font-medium text-stone-500 group-hover:text-stone-700">Call Our Toronto Team</span>
-              <span className="text-sm font-bold text-[#1E242B] group-hover:text-[#EC282D] transition-colors">
-                {COMPANY_PHONE}
-              </span>
-            </a>
-            
+          <div className="hidden sm:flex items-center">
             <button
               onClick={onOpenEstimateModal}
-              className="bg-[#EC282D] hover:bg-[#D62025] text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow-md shadow-red-500/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 cursor-pointer"
+              className="bg-[#EC282D] hover:bg-[#D62025] text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow-md shadow-red-500/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 cursor-pointer whitespace-nowrap"
             >
               <span>Get Free Estimate</span>
             </button>
