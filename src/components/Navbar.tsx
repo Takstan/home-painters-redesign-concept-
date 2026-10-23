@@ -39,13 +39,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEstimateModal }) => {
               <Clock className="w-3.5 h-3.5 text-[#6DBE45]" />
               Same-Day Estimates Available
             </div>
-            <a 
-              href={`tel:${COMPANY_PHONE.replace(/[^0-9]/g, '')}`}
-              className="flex items-center gap-1.5 text-white hover:text-red-400 transition-colors font-bold"
-            >
+            <div className="flex items-center gap-1.5 text-white font-bold cursor-default">
               <Phone className="w-3.5 h-3.5 text-[#EC282D]" />
-              {COMPANY_PHONE}
-            </a>
+              <span>{COMPANY_PHONE}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -196,13 +193,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEstimateModal }) => {
           </div>
 
           <div className="pt-3 border-t border-stone-200 flex flex-col gap-2">
-            <a
-              href={`tel:${COMPANY_PHONE.replace(/[^0-9]/g, '')}`}
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-lg border-2 border-stone-300 font-bold text-stone-800"
+            <button
+              type="button"
+              onClick={(e) => e.preventDefault()}
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-lg border-2 border-stone-300 font-bold text-stone-800 cursor-default"
             >
               <Phone className="w-4 h-4 text-[#EC282D]" />
-              Call Now: {COMPANY_PHONE}
-            </a>
+              <span>Call Now: {COMPANY_PHONE}</span>
+            </button>
             <button
               onClick={() => {
                 setMobileMenuOpen(false);

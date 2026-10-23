@@ -21,23 +21,7 @@ export const FinalCtaSection: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const validation = validateLeadForm(formData);
-
-    if (!validation.isValid) {
-      setErrors(validation.errors);
-      return;
-    }
-
-    setErrors({});
-    setIsSubmitting(true);
-
-    // Simulate reliable submission
-    setTimeout(() => {
-      const code = 'HPT-' + Math.floor(100000 + Math.random() * 900000);
-      setConfirmationCode(code);
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 700);
+    // Leave as is without submitting
   };
 
   return (
@@ -100,13 +84,10 @@ export const FinalCtaSection: React.FC = () => {
             <div className="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between gap-4">
               <div>
                 <span className="text-xs text-stone-400 block font-medium">Prefer to talk directly right now?</span>
-                <a
-                  href={`tel:${COMPANY_PHONE.replace(/[^0-9]/g, '')}`}
-                  className="text-lg sm:text-xl font-black text-white hover:text-red-400 transition-colors flex items-center gap-2 mt-0.5"
-                >
+                <div className="text-lg sm:text-xl font-black text-white flex items-center gap-2 mt-0.5 cursor-default">
                   <Phone className="w-5 h-5 text-[#EC282D]" />
                   <span>{COMPANY_PHONE}</span>
-                </a>
+                </div>
               </div>
               <div className="text-right text-xs text-stone-400">
                 <span className="block font-bold text-stone-300">Mon - Sat: 8am - 7pm</span>

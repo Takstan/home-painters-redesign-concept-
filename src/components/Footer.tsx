@@ -35,10 +35,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenEstimateModal }) => {
             </p>
 
             <div className="pt-2 flex flex-col space-y-2 text-xs text-stone-300">
-              <a href={`tel:${COMPANY_PHONE.replace(/[^0-9]/g, '')}`} className="flex items-center gap-2 hover:text-white">
+              <div className="flex items-center gap-2 text-stone-300 cursor-default">
                 <Phone className="w-4 h-4 text-[#EC282D]" />
                 <span className="font-bold text-white text-sm">{COMPANY_PHONE}</span>
-              </a>
+              </div>
               <a href={`mailto:${COMPANY_EMAIL}`} className="flex items-center gap-2 hover:text-white">
                 <Mail className="w-4 h-4 text-[#EC282D]" />
                 <span>{COMPANY_EMAIL}</span>

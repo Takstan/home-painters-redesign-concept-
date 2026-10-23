@@ -40,20 +40,7 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({ isOpen, onClose, i
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const validation = validateLeadForm({
-      ...formData,
-      serviceType
-    });
-
-    if (!validation.isValid) {
-      setErrors(validation.errors);
-      return;
-    }
-
-    setErrors({});
-    const code = 'EST-' + Math.floor(100000 + Math.random() * 900000);
-    setConfirmationCode(code);
-    setStep('confirmed');
+    // Leave as is without submitting
   };
 
   return (
@@ -154,13 +141,10 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({ isOpen, onClose, i
             </div>
 
             <div className="flex items-center justify-between pt-2">
-              <a
-                href={`tel:${COMPANY_PHONE.replace(/[^0-9]/g, '')}`}
-                className="text-xs font-bold text-stone-600 hover:text-stone-900 flex items-center gap-1.5"
-              >
+              <div className="text-xs font-bold text-stone-600 flex items-center gap-1.5 cursor-default">
                 <Phone className="w-3.5 h-3.5 text-[#EC282D]" />
                 <span>Call {COMPANY_PHONE}</span>
-              </a>
+              </div>
 
               <button
                 type="button"

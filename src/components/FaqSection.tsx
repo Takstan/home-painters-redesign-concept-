@@ -95,13 +95,14 @@ export const FaqSection: React.FC = () => {
             </p>
           </div>
           <div className="flex items-center gap-3 shrink-0">
-            <a
-              href={`tel:${COMPANY_PHONE.replace(/[^0-9]/g, '')}`}
-              className="inline-flex items-center gap-2 bg-stone-100 hover:bg-stone-200 text-stone-900 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-colors"
+            <button
+              type="button"
+              onClick={(e) => e.preventDefault()}
+              className="inline-flex items-center gap-2 bg-stone-100 text-stone-900 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm cursor-default"
             >
               <Phone className="w-4 h-4 text-[#EC282D]" />
               <span>Call (416) 494-9095</span>
-            </a>
+            </button>
           </div>
         </div>
 
